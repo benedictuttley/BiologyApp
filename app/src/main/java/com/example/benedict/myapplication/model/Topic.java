@@ -2,6 +2,7 @@ package com.example.benedict.myapplication.model;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,16 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.benedict.myapplication.R;
+import com.example.benedict.myapplication.StructureActivity;
+import com.example.benedict.myapplication.TopicActivity;
 
 import java.util.List;
 
+import static android.support.v4.content.ContextCompat.startActivity;
 import static com.example.benedict.myapplication.R.mipmap.ic_launcher;
 
 public class Topic {
     private String mTopicTitle;
     private String mImageId;
+
 
 
     public Topic(String title, String image_Id) {
@@ -93,13 +99,23 @@ public class Topic {
         private Context mContext;
 
 
-        public TopicHolder(View itemView, Context context) {
+        public TopicHolder(View itemView, final Context context) {
             super(itemView);
             // find values from the layout .xml files
 
             mTopicTitleTextView = (Button) itemView.findViewById(R.id.topicButton);
+            mTopicTitleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mContext = context;
+                Toast toast = Toast.makeText(mContext,mTopicTitleTextView.getText(),Toast.LENGTH_SHORT);
+                toast.show();
+
+                Intent intent = new Intent(mContext, StructureActivity.class);
+                startActivity(mContext,intent,null);
+                    }
+        });
             mTopicImageView = (ImageView) itemView.findViewById(R.id.topicImageView);
-            mContext = context;
 
         }
 

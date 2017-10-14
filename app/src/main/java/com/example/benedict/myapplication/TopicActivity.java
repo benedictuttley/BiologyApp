@@ -1,6 +1,8 @@
 package com.example.benedict.myapplication;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.benedict.myapplication.database.topicsData.TopicBaseHelper;
 import com.example.benedict.myapplication.database.topicsData.TopicDbSchema;
@@ -22,7 +27,8 @@ public class TopicActivity extends AppCompatActivity {
     private RecyclerView mTopicRecycler;
     private Topic.TopicAdapter mAdapter;
     private static final String TAG = TopicActivity.class.getSimpleName();
-
+    private Button button;
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +38,9 @@ public class TopicActivity extends AppCompatActivity {
         Topic topic;
         addTopic(topic = new Topic("Cell", "cell"));
         mTopicRecycler = (RecyclerView) findViewById(R.id.topic_recycler_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mTopicRecycler.setLayoutManager(linearLayoutManager);
         updateUI();
-
 
     }
 
@@ -56,10 +61,9 @@ public class TopicActivity extends AppCompatActivity {
                 cursor.close();
             }
         }
-            topics.add(new Topic("test1", "test"));
-            topics.add(new Topic("test1", "test"));
-            return topics;
-
+        topics.add(new Topic("test1", "test"));
+        topics.add(new Topic("test1", "test"));
+        return topics;
 
 
     }
@@ -97,9 +101,9 @@ public class TopicActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-        Log.i(TAG,"test");
+        Log.i(TAG, "test");
         List<Topic> topics = getTopics();
-        Log.i(TAG,getTopics().toString());
+        Log.i(TAG, getTopics().toString());
         mAdapter = new Topic.TopicAdapter(topics, this);
         mTopicRecycler.setAdapter(mAdapter);
 
