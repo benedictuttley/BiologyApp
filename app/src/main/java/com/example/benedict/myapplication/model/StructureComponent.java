@@ -1,6 +1,6 @@
 package com.example.benedict.myapplication.model;
 
-
+// Alll classes need commenting and packaging
 import android.content.Context;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
