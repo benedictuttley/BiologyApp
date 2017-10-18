@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -104,13 +105,16 @@ public class Structure {
         private Button mStructureButton;
         private TextView mStructureDescription;
         private Context mContext;
+        private ImageView mStructureImageView;
 
 
         public StructureHolder(View itemView, final Context context) {
             super(itemView);
 
             mStructureButton = (Button) itemView.findViewById(R.id.structureButton);
-            mStructureDescription = (TextView) itemView.findViewById(R.id.structureDescriptionTextView);
+            mStructureImageView = (ImageView) itemView.findViewById(R.id.structureImageView);
+            //mStructureDescription = (TextView) itemView.findViewById(R.id.structureDescriptionTextView);
+
 
             mStructureButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -132,7 +136,8 @@ public class Structure {
         public void bindStructure(Structure structure) {
             mStructure = structure;
             mStructureButton.setText(mStructure.getStructureTitle());
-            // mTopicImageView.setImageResource(mContext.getResources().getIdentifier(mTopic.getImageId(),"drawable", mContext.getPackageName()));
+            mStructureImageView.setImageResource(R.drawable.cellwall);
+
             //mTopicImageView.setImageResource(ic_launcher);
         }
 

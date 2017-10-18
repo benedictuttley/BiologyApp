@@ -125,7 +125,7 @@ public class Topic {
             Log.i(TAG,"test");
             mTopicTitleTextView.setText(mTopic.getTopicTitle());
            // mTopicImageView.setImageResource(mContext.getResources().getIdentifier(mTopic.getImageId(),"drawable", mContext.getPackageName()));
-            mTopicImageView.setImageResource(ic_launcher);
+            mTopicImageView.setImageResource(R.drawable.topicdrawings);
         }
 
 

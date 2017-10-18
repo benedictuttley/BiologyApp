@@ -35,6 +35,7 @@ public class StructureActivity extends AppCompatActivity {
         mStructureRecycler = (RecyclerView) findViewById(R.id.structure_recylcer_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mStructureRecycler.setLayoutManager(linearLayoutManager);
+
         updateUI();
     }
 
