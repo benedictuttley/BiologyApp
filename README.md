@@ -1,3 +1,4 @@
+
 CURRENT APPLICATION STATE:
 --------------------------
 
@@ -5,6 +6,8 @@ CURRENT APPLICATION STATE:
   partially linked, meaning that they can be accessed through onClick clisteners however no back button functionality has been added.
 - The text and images for the topics and there components are currently being added to a SQLite database which will be shiped preloaded with
   the download. As a result currently there is a test database. Test images are hardcoded into the .XML layout files.
+  
+  
   
   
   TODO:
@@ -15,10 +18,16 @@ CURRENT APPLICATION STATE:
   - Design a more decriptive main activity, describing what the app does
   - Test adaptability to different screen resolutions and sizes
   
-  DESCRIPTION:
-  -----------
-This is an android application currently without a title, that is a learning assist for biology students at GCSE or international equivelant.
-There is a hierarchial structure consisting of three classes:
+ 
+ 
+ 
+ 
+ 
+ DESCRIPTION:
+ -----------
+ 
+  - This is an android application currently without a title, that is a learning assist for biology students at GCSE or international        equivelant.
+  - There is a hierarchial structure consisting of three classes:
 
 1) Topic - eg: Cell
 2) Structure - eg: Nucleus
