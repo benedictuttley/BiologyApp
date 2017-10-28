@@ -23,18 +23,17 @@ CURRENT APPLICATION STATE:
  
  
  
- DESCRIPTION:
- -----------
+  DESCRIPTION:
+  -----------
  
-  - This is an android application currently without a title, that is a learning assist for biology students at GCSE or international        equivelant.
-  - There is a hierarchial structure consisting of three classes:
+   - This is an android application currently without a title, that is a learning assist for biology students at GCSE or international        equivelant.
+   - There is a hierarchial structure consisting of three classes:
 
-1) Topic - eg: Cell
-2) Structure - eg: Nucleus
-3) StructureComponent - eg: Nuclear Envelope
+ 1) Topic - eg: Cell
+ 2) Structure - eg: Nucleus
+ 3) StructureComponent - eg: Nuclear Envelope
 
 At each level the data contained within each object is displayed in a cardview container which is then wrapped in a RecyclerView. Currently
 the user can move through the different topics and gain a basic understanding of the organisation of biological structures or proceeses,
 the aim is not to be a substitute for school education, but mererly as a tool to gain a understanding the 'general picture' which will 
-hopefully give users confidence about learning the more intricate workings of each topic as they will have a general understanding instead of,
-as I found, learning content that was in signifiacant detail, without knowing its more general purpose which is just confusing!
+hopefully give users confidence about learning the more intricate workings of each topic as they will have a general understanding instead  of, as I found, learning content that was in signifiacant detail, without knowing its more general purpose which is just confusing!
