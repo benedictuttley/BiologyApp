@@ -20,7 +20,7 @@ import static android.support.v4.content.ContextCompat.startActivity;
 /*Class represents the sub Topic, for example if the Topic is the Cell, then the structure is the Nucleus.
   In a future iteration this may implement an interface.
   In a future iteration Recycler view classes will be separated from class and model package all together to keep
-  with the Model View Controller principles.*/
+  with the Model View Controller principle.*/
 
 public class Structure {
 
@@ -110,9 +110,9 @@ public class Structure {
         public StructureHolder(View itemView, final Context context) {
             super(itemView);
 
-            mStructureButton = (Button) itemView.findViewById(R.id.structureButton);
-            mStructureImageView = (ImageView) itemView.findViewById(R.id.structureImageView);
-            mStructureDescription = (TextView) itemView.findViewById(R.id.structureDescriptionTextView);
+            mStructureButton = itemView.findViewById(R.id.structureButton);
+            mStructureImageView = itemView.findViewById(R.id.structureImageView);
+            mStructureDescription = itemView.findViewById(R.id.structureDescriptionTextView);
 
             // Created the link between the button associated with that Structure and its sub-structure objects
             // called StructureComponents
