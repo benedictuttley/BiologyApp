@@ -1,8 +1,6 @@
 package com.example.benedict.myapplication.model;
 
-// Alll classes need commenting and packaging
 import android.content.Context;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +11,13 @@ import android.widget.TextView;
 import com.example.benedict.myapplication.R;
 
 import java.util.List;
+
+/*  Class represents the lowest structure in the hierarchy, for example: If the Topic is the cell and the structure is the nucleus,
+    then the StructureComponent may be the nucleolus, or the nuclear envelope.
+    In a future iteration this may implement an interface.
+    In a future iteration Recycler view classes will be separated from class and model package all together to keep
+    with the Model View Controller principles.*/
+
 
 public class StructureComponent {
     private String mStructureTitle;
@@ -74,6 +79,7 @@ public class StructureComponent {
 
 
 
+    // Class to link data in StructureComponent to the produced recycler views.
 
     public static class ComponentAdapter extends RecyclerView.Adapter<ComponentHolder>{
 
@@ -109,10 +115,10 @@ public class StructureComponent {
         }
     }
 
+    // Class to select views that will contain StructureComponent data.
 
     public static class ComponentHolder extends RecyclerView.ViewHolder{
 
-        //private static final String TAG = TopicHolder.class.getSimpleName();
         private StructureComponent mStructureComponent;
         private TextView mComponentTitleTextView;
         private ImageView mComponentImageView;
@@ -131,26 +137,18 @@ public class StructureComponent {
         }
 
 
+        // Sets the activity_structure_component recycled views with their associated data that has
+        // been fetched using the adapter class.
+
         public void bindComponent(StructureComponent component){
             StructureComponent mComponent = component;
             mComponentTitleTextView.setText(mComponent.getStructureTitle());
             mComponentDescriptionTextView.setText(mComponent.getDescription());
             mComponentPurposeTextView.setText(mComponent.getPurpose());
-            // mTopicImageView.setImageResource(mContext.getResources().getIdentifier(mTopic.getImageId(),"drawable", mContext.getPackageName()));
-            // mTopicImageView.setImageResource(ic_launcher);
+
+            // NOTE: There is no image set here as until the images have been created, a default image has been
+            // set for reference
         }
-
-
-
-
     }
-
-
-
-
-
-
-
-
 
 }

@@ -9,20 +9,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.benedict.myapplication.R;
-import com.example.benedict.myapplication.StructureActivity;
 import com.example.benedict.myapplication.StructureComponentActivity;
 
 import java.util.List;
 
 import static android.support.v4.content.ContextCompat.startActivity;
 
-
-/**
- * Created by Benedict on 09/10/2017.
- */
+/*Class represents the sub Topic, for example if the Topic is the cell, then the structure is the nucleus.
+  In a future iteration this may implement an interface.
+  In a future iteration Recycler view classes will be separated from class and model package all together to keep
+  with the Model View Controller principles.*/
 
 public class Structure {
 
@@ -35,8 +33,6 @@ public class Structure {
         mImageId = imageId;
         mTopicDescription = description;
     }
-
-    ;
 
 
     public String getStructureTitle() {
@@ -62,6 +58,9 @@ public class Structure {
     public void setTopicDescription(String TopicDescription) {
         mTopicDescription = TopicDescription;
     }
+
+
+    // Class to link data in Structure to the produced recycler views.
 
     public static class StructureAdapter extends RecyclerView.Adapter<StructureHolder> {
         private List<Structure> mStructures;
@@ -97,7 +96,7 @@ public class Structure {
         }
     }
 
-
+    // Class to select views that will contain Structure data.
     private static class StructureHolder extends RecyclerView.ViewHolder {
 
         private Structure mStructure;
@@ -113,8 +112,10 @@ public class Structure {
 
             mStructureButton = (Button) itemView.findViewById(R.id.structureButton);
             mStructureImageView = (ImageView) itemView.findViewById(R.id.structureImageView);
-            //mStructureDescription = (TextView) itemView.findViewById(R.id.structureDescriptionTextView);
+            mStructureDescription = (TextView) itemView.findViewById(R.id.structureDescriptionTextView);
 
+            // Created the link between the button associated with that Structure and its sub-structure objects
+            // called StructureComponents
 
             mStructureButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -122,23 +123,21 @@ public class Structure {
                     Context mContext = context;
 
                     Intent intent = new Intent(mContext, StructureComponentActivity.class);
-                    startActivity(mContext,intent,null);
-
-                    Toast toast = Toast.makeText(mContext, mStructureButton.getText(), Toast.LENGTH_SHORT);
-                    toast.show();
+                    startActivity(mContext, intent, null);
                 }
 
 
             });
         }
 
+        // Sets the activity_structure recycled views with their associated data that has
+        // been fetched using the adapter class.
 
         public void bindStructure(Structure structure) {
             mStructure = structure;
             mStructureButton.setText(mStructure.getStructureTitle());
             mStructureImageView.setImageResource(R.drawable.cellwall);
-
-            //mTopicImageView.setImageResource(ic_launcher);
+            mStructureDescription.setText(mStructure.getTopicDescription());
         }
 
 
