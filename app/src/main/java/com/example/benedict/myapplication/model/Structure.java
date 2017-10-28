@@ -17,7 +17,7 @@ import java.util.List;
 
 import static android.support.v4.content.ContextCompat.startActivity;
 
-/*Class represents the sub Topic, for example if the Topic is the cell, then the structure is the nucleus.
+/*Class represents the sub Topic, for example if the Topic is the Cell, then the structure is the Nucleus.
   In a future iteration this may implement an interface.
   In a future iteration Recycler view classes will be separated from class and model package all together to keep
   with the Model View Controller principles.*/
